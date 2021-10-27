@@ -11,10 +11,6 @@ require("./start/apis")(app);
 require("./start/socket")(server);
 require("./start/db")();
 
-app.get("/", (req, res) => {
-  res.send("<h1>Hello world</h1>");
-});
-
 server.listen(process.env.PORT, () =>
   console.log(chalk.yellow(`Listening on port ${process.env.PORT}...`))
 );
