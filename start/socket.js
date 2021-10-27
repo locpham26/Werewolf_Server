@@ -39,7 +39,6 @@ module.exports = function (server) {
     cors: {
       origin: "*",
       methods: ["GET", "POST"],
-      credentials: true,
     },
   });
   io.on("connection", (socket) => {
