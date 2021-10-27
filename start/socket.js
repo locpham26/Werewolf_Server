@@ -36,11 +36,11 @@ const {
 module.exports = function (server) {
   //initilize io
   const io = socketio(server, {
-    cors: {
-      origin: ["localhost:3002"],
-      methods: ["GET", "POST"],
-      credentials: true,
-    },
+    // cors: {
+    //   origin: ["localhost:3002"],
+    //   methods: ["GET", "POST"],
+    //   credentials: true,
+    // },
   });
   io.on("connection", (socket) => {
     //log connection
