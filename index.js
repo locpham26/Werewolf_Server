@@ -11,7 +11,6 @@ require("./start/apis")(app);
 require("./start/socket")(server);
 require("./start/db")();
 
-let port = 3001;
-server.listen(port, () =>
-  console.log(chalk.yellow(`Listening on port ${port}...`))
+server.listen(process.env.PORT, () =>
+  console.log(chalk.yellow(`Listening on port ${process.env.PORT}...`))
 );
