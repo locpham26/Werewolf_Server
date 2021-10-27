@@ -37,10 +37,9 @@ module.exports = function (server) {
   //initilize io
   const io = socketio(server, {
     cors: {
-      origin: false,
+      origin: ["localhost:3002"],
       methods: ["GET", "POST"],
       credentials: true,
-      "Access-Control-Allow-Credentials": true,
     },
   });
   io.on("connection", (socket) => {
