@@ -24,7 +24,7 @@ const {
   switchTurn,
   checkWin,
   endGame,
-} = require("../utils/room");
+} = require("../utils/rooms");
 
 const {
   activatePlayer,
@@ -36,11 +36,11 @@ const {
 module.exports = function (server) {
   //initilize io
   const io = socketio(server, {
-    // cors: {
-    //   origin: ["localhost:3002"],
-    //   methods: ["GET", "POST"],
-    //   credentials: true,
-    // },
+    cors: {
+      origin: "http://localhost:3002",
+      methods: ["GET", "POST"],
+      credentials: false,
+    },
   });
   io.on("connection", (socket) => {
     //log connection
