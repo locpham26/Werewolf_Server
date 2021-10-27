@@ -40,6 +40,7 @@ module.exports = function (server) {
       origin: false,
       methods: ["GET", "POST"],
       credentials: true,
+      "Access-Control-Allow-Credentials": true,
     },
   });
   io.on("connection", (socket) => {
