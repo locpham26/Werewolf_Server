@@ -7,6 +7,8 @@ const app = express();
 const server = http.createServer(app);
 app.use(cors());
 
+if (process.env.NODE_ENV !== "production") require("dotenv").config();
+
 require("./start/apis")(app);
 require("./start/socket")(server);
 require("./start/db")();
