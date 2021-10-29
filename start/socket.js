@@ -24,7 +24,7 @@ const {
   switchTurn,
   checkWin,
   endGame,
-} = require("../utils/rooms");
+} = require("../utils/room");
 
 const {
   activatePlayer,
