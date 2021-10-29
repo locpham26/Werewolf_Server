@@ -37,16 +37,10 @@ module.exports = function (server) {
   //initilize io
   const io = socketio(server, {
     cors: {
-      origin: ["*"],
-      handlePreflightRequest: (req, res) => {
-        res.writeHead(200, {
-          "Access-Control-Allow-Origin": "*",
-          "Access-Controll-Allow-Methods": "GET,POST",
-          "Access-Control-Allow-Headers": "my-custom-header",
-          "Access-Control-Allow-Credentials": true,
-        });
-        res.end();
-      },
+      origin: "*",
+      methods: ["GET", "POST"],
+      allowedHeaders: ["my-custom-header", "Access-Control-Allow-Origin"],
+      credentials: true,
     },
   });
   io.on("connection", (socket) => {
